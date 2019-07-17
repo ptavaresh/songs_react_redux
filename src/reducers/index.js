@@ -1,12 +1,13 @@
 // Reducers index
+import { combineReducers } from 'redux';
 
-const songsreducer = () => {
+const songsReducer = () => {
     return [
         { title: 'No Scrubs', duration: '4:05'},
         { title: 'Macarena', duration: '2:20'},
         { title: 'All Star', duration: '3:05'},
         { title: 'Du hast', duration: '4:15'},
-    ]
+    ];
 };
 
 const selectedSongReducer = (selectedSong=null, action) => {
@@ -16,3 +17,8 @@ const selectedSongReducer = (selectedSong=null, action) => {
 
     return selectedSong;
 };
+
+export default combineReducers({
+    songs: songsReducer,
+    selectedSong: selectedSongReducer
+  });
